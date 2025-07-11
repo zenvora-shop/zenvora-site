@@ -2,147 +2,190 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
 }
 
 body {
-  background-color: #f9f9f9;
-  color: #333;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+  color: #ffffff;
 }
 
+/* HEADER STYLING */
 header {
-  background-color: #000;
+  background: #000000;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 1rem 2rem;
+  position: relative;
+  z-index: 10;
 }
 
 .logo {
   font-size: 1.8rem;
-  font-weight: bold;
-  color: gold;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+nav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
 }
 
 nav a {
   color: white;
   text-decoration: none;
-  margin-left: 25px;
   font-weight: 500;
+  position: relative;
 }
 
-nav a:hover {
-  color: gold;
+nav a:hover::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: gold;
+  bottom: -4px;
+  left: 0;
 }
 
-.hero {
-  background: url('https://images.unsplash.com/photo-1607082349250-f3bba3fe6b89?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
-  height: 70vh;
+.header-right {
   display: flex;
   align-items: center;
+  gap: 1.5rem;
+}
+
+.search-bar input {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 3px;
+}
+
+/* LOGIN & CART LINKS */
+.icon-links a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  height: 3px;
+  width: 25px;
+  background: white;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  background: #111;
+  position: absolute;
+  top: 65px;
+  right: 2rem;
+  width: 220px;
+  padding: 1rem;
+  border: 1px solid #333;
+}
+
+.mobile-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #444;
+}
+
+/* Hamburger Animation */
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* HERO SECTION */
+.hero {
+  background: url('banner.jpg') center/cover no-repeat;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 4rem 2rem;
   color: white;
   position: relative;
 }
 
 .hero::before {
   content: "";
-  background-color: rgba(0, 0, 0, 0.6);
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-.hero-text {
+.hero h2,
+.hero p {
   position: relative;
   z-index: 1;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  color: gold;
-  margin-bottom: 10px;
+.hero h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
 }
 
 .hero p {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 1.5rem;
 }
 
-.search-bar {
-  padding: 12px 20px;
-  width: 300px;
+/* CTA BUTTON */
+.btn {
+  padding: 0.8rem 1.5rem;
+  background: gold;
+  color: black;
+  font-weight: 600;
   border: none;
-  border-radius: 25px;
-  font-size: 1rem;
-}
-
-.products {
-  padding: 50px 30px;
-  background-color: #fff;
-  text-align: center;
-}
-
-.products h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #111;
-}
-
-.product-grid {
-  display: flex;
-  gap: 30px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.product-card {
-  background-color: #fafafa;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 15px;
-  width: 200px;
-  text-align: center;
-  transition: 0.3s ease;
-}
-
-.product-card:hover {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-.product-card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.product-card h3 {
-  margin: 15px 0 5px;
-  color: #222;
-}
-
-.product-card p {
-  color: #888;
-  margin-bottom: 10px;
-}
-
-.product-card button {
-  padding: 10px 15px;
-  border: none;
-  background-color: gold;
-  border-radius: 25px;
   cursor: pointer;
-  font-weight: bold;
+  text-decoration: none;
+  border-radius: 5px;
+  position: relative;
+  z-index: 1;
 }
 
-.product-card button:hover {
-  background-color: #ffd700;
-}
-
+/* FOOTER */
 footer {
-  background-color: #000;
-  color: white;
-  padding: 20px;
+  background: #000;
+  color: #999;
   text-align: center;
-  margin-top: 50px;
+  padding: 1rem 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobile-nav {
+    display: none;
+  }
 }
