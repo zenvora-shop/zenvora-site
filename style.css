@@ -1,41 +1,42 @@
 body {
   margin: 0;
-  font-family: 'Montserrat', sans-serif;
-  background: #fff;
-  color: #111;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
 }
 
 header {
-  background: #fff;
+  width: 100%;
+}
+
+/* ===== MOBILE HEADER ===== */
+.mobile-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  position: relative;
-  border-bottom: 1px solid #eee;
+  background: white;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
 }
 
 .logo {
-  font-family: 'Playfair Display SC', serif;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: #111;
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
 }
 
 .hamburger {
-  width: 20px;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 20px;
   height: 16px;
+  cursor: pointer;
 }
 
 .bar {
   height: 2px;
-  background: #111;
-  border-radius: 2px;
-  transition: 0.3s;
+  background-color: black;
+  transition: all 0.3s ease;
 }
 
 .hamburger.active .bar:nth-child(1) {
@@ -50,80 +51,96 @@ header {
   transform: rotate(-45deg) translate(3px, -3px);
 }
 
-.right-icons .icon {
-  margin-left: 15px;
-  font-size: 1.2rem;
-  color: #111;
+.icons {
+  display: flex;
+  gap: 0.7rem;
+  font-size: 18px;
 }
 
-.desktop-nav {
-  display: none;
-  padding: 10px 30px;
-  justify-content: space-between;
-  align-items: center;
-  background: #fff;
-}
-
-.desktop-nav a {
-  margin: 0 10px;
-  text-decoration: none;
-  color: #111;
-  font-weight: 500;
-  position: relative;
-}
-
-.desktop-nav a:hover::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  height: 1px;
-  width: 100%;
-  background-color: #D4AF37;
-}
-
-.right-nav {
-  margin-left: auto;
-}
-
-.mobile-nav {
+/* ===== MOBILE MENU ===== */
+.mobile-menu {
   display: none;
   flex-direction: column;
-  background: #1a1a1a;
-  padding: 15px 20px;
-  position: absolute;
-  top: 60px;
-  left: 0;
-  width: 100%;
-  z-index: 10;
+  background: #111;
+  color: white;
+  padding: 1rem;
 }
 
-.mobile-nav.open {
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.mobile-menu .divider {
+  border-bottom: 1px solid #555;
+  margin: 0.2rem 0;
+}
+
+.mobile-menu.show {
   display: flex;
 }
 
-.mobile-nav a {
-  color: white;
+/* ===== DESKTOP HEADER ===== */
+.desktop-header {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.desktop-header .left {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.desktop-nav a {
+  margin-right: 1.2rem;
   text-decoration: none;
-  padding: 10px 0;
-  font-size: 1rem;
+  color: black;
+  font-weight: 600;
   text-transform: uppercase;
-  font-weight: 500;
+  font-size: 14px;
+  position: relative;
 }
 
-.separator {
-  height: 1px;
-  background: #fff;
-  opacity: 0.2;
-  margin: 5px 0;
+.desktop-nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: gold;
+  transition: width 0.3s ease;
 }
 
-/* Responsive */
-@media (min-width: 768px) {
-  .hamburger, .mobile-nav, .right-icons {
+.desktop-nav a:hover::after {
+  width: 100%;
+}
+
+/* Icons on desktop */
+.desktop-header .right .icons {
+  display: flex;
+  gap: 1rem;
+  font-size: 18px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media screen and (min-width: 769px) {
+  .mobile-header,
+  .mobile-menu {
     display: none;
   }
-  .desktop-nav {
+
+  .desktop-header {
     display: flex;
   }
 }
