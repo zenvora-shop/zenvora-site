@@ -1,80 +1,119 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zenvora | All-in-One Store</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f4f4f4;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff;
+      color: #111;
+    }
+
     header {
-      background: #111;
+      background: #000;
       color: white;
+      padding: 0.7rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
       position: relative;
     }
+
     .logo {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: bold;
-      color: #FFD700;
+      color: white;
     }
+
     nav {
       display: flex;
       gap: 1rem;
     }
+
     nav a {
       color: white;
       text-decoration: none;
-      font-weight: 500;
+      font-size: 1rem;
+      position: relative;
     }
+
+    nav a::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: white;
+      transition: width 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
     .hamburger {
       display: none;
       flex-direction: column;
       cursor: pointer;
     }
+
     .bar {
       height: 3px;
       width: 25px;
       background: white;
-      margin: 4px 0;
-      transition: 0.4s;
+      margin: 3px 0;
+      transition: all 0.4s ease;
     }
+
     .mobile-nav {
       display: none;
       flex-direction: column;
-      background: #111;
+      background: #000;
       position: absolute;
       top: 60px;
       right: 2rem;
-      width: 200px;
+      width: 180px;
       padding: 1rem;
-      border: 1px solid #333;
+      border: 1px solid #444;
+      z-index: 100;
     }
+
     .mobile-nav a {
+      color: white;
+      text-decoration: none;
       margin: 0.5rem 0;
+      font-size: 0.95rem;
     }
+
     .hamburger.active .bar:nth-child(1) {
       transform: rotate(-45deg) translate(-5px, 6px);
     }
+
     .hamburger.active .bar:nth-child(2) {
       opacity: 0;
     }
+
     .hamburger.active .bar:nth-child(3) {
       transform: rotate(45deg) translate(-5px, -6px);
     }
+
     @media (max-width: 768px) {
       nav {
         display: none;
       }
+
       .hamburger {
         display: flex;
       }
+
       .mobile-nav {
         display: flex;
       }
@@ -101,11 +140,23 @@
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
-  </header>  <script>
+  </header>
+
+  <main style="padding: 3rem 2rem;">
+    <h2 style="font-size: 2rem;">Welcome to Zenvora</h2>
+    <p style="margin-top: 1rem; font-size: 1rem;">Your all-in-one destination for digital products, services, and everything in between.</p>
+  </main>
+
+  <footer style="text-align:center; padding: 1rem; background:#000; color:white;">
+    &copy; 2025 Zenvora. All rights reserved.
+  </footer>
+
+  <script>
     function toggleMenu(x) {
       x.classList.toggle("active");
       const nav = document.getElementById("mobileNav");
       nav.style.display = nav.style.display === "flex" ? "none" : "flex";
     }
-  </script></body>
+  </script>
+</body>
 </html>
