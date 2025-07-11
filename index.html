@@ -1,178 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zenvora | All-in-One Digital Marketplace</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zenvora | All-in-One Store</title>
+  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #f5f5f5;
-      color: #ffffff;
-    }
-    header {
-      background: #000000;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      position: relative;
-      z-index: 10;
-    }
-    .logo {
-      font-size: 1.8rem;
-      font-weight: 600;
-      color: #ffffff;
-    }
-    nav {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      position: relative;
-    }
-    nav a:hover::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 2px;
-      background-color: gold;
-      bottom: -4px;
-      left: 0;
-    }
-    .header-right {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-    .search-bar input {
-      padding: 0.4rem 0.8rem;
-      border: none;
-      border-radius: 3px;
-    }
-    .icon-links a {
-      color: #ddd;
-      text-decoration: none;
-      font-size: 1rem;
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .bar {
-      height: 3px;
-      width: 25px;
-      background: white;
-      margin: 4px 0;
-      transition: 0.4s;
-    }
-
-    .mobile-nav {
-      display: none;
-      flex-direction: column;
-      background: #111;
-      position: absolute;
-      top: 65px;
-      right: 2rem;
-      width: 220px;
-      padding: 1rem;
-      border: 1px solid #333;
-    }
-    .mobile-nav a {
-      color: white;
-      text-decoration: none;
-      padding: 0.6rem 0;
-      border-bottom: 1px solid #444;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-      transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    .hamburger.active .bar:nth-child(2) {
-      opacity: 0;
-    }
-    .hamburger.active .bar:nth-child(3) {
-      transform: rotate(45deg) translate(-5px, -6px);
-    }
-
-    .hero {
-      background: url('banner.jpg') center/cover no-repeat;
-      min-height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 4rem 2rem;
-      color: white;
-      position: relative;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-    }
-    .hero h2, .hero p {
-      position: relative;
-      z-index: 1;
-    }
-    .hero h2 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto 1.5rem;
-    }
-    .btn {
-      padding: 0.8rem 1.5rem;
-      background: gold;
-      color: black;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-      text-decoration: none;
-      border-radius: 5px;
-      position: relative;
-      z-index: 1;
-    }
-
-    footer {
-      background: #000;
-      color: #999;
-      text-align: center;
-      padding: 1rem 0;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-      }
-      .hamburger {
-        display: flex;
-      }
-      .mobile-nav {
-        display: none;
-      }
-    }
-  </style>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
 <body>
+
   <header>
     <div class="logo">ZENVORA</div>
 
@@ -181,36 +18,36 @@
       <a href="products.html">Products</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
+      <a href="login.html" class="login-desktop">Login</a>
+      <a href="search.html" class="search-desktop"><i class="fas fa-search"></i></a>
+      <a href="cart.html" class="cart-desktop"><i class="fas fa-shopping-cart"></i></a>
     </nav>
 
-    <div class="header-right">
-      <div class="search-bar">
-        <input type="text" placeholder="Search..." />
-      </div>
-      <div class="icon-links">
-        <a href="#">Login</a> |
-        <a href="#">Cart</a>
-      </div>
-      <div class="hamburger" onclick="toggleMenu(this)">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
     </div>
 
     <div class="mobile-nav" id="mobileNav">
+      <a href="login.html">Login</a>
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
+      <a href="search.html"><i class="fas fa-search"></i> Search</a>
+    </div>
+
+    <div class="cart-icon-mobile">
+      <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
     </div>
   </header>
 
   <main>
     <section class="hero">
-      <h2>Explore Smarter. Shop Better. Live Seamlessly.</h2>
-      <p>Your curated gateway to everything digital — tools, trends, and tech.</p>
-      <a href="products.html" class="btn">Start Exploring</a>
+      <h1>Powering Your Digital Lifestyle</h1>
+      <p>One place for tools, gadgets, services, and more.</p>
+      <a href="products.html" class="btn">Explore Now</a>
     </section>
   </main>
 
@@ -222,8 +59,9 @@
     function toggleMenu(x) {
       x.classList.toggle("active");
       const nav = document.getElementById("mobileNav");
-      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+      nav.classList.toggle("show");
     }
   </script>
+
 </body>
 </html>
