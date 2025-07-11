@@ -3,51 +3,58 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ZENVORA | All-in-One Store</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
+  <title>ZENVORA | All-In-One Store</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <div class="top-bar">
+
+  <header class="desktop-header">
+    <div class="left">
       <div class="logo">ZENVORA</div>
-      <div class="icons">
-        <span class="icon">🔍</span>
-        <span class="icon">🛍️</span>
-      </div>
     </div>
-    <hr />
-    <nav class="desktop-nav">
-      <ul>
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">PRODUCTS</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">CONTACT</a></li>
-        <li><a href="#">LOGIN</a></li>
-      </ul>
-    </nav>
-    <div class="mobile-header">
-      <div class="hamburger" onclick="toggleMenu(this)">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
-      <div class="mobile-logo">ZENVORA</div>
-      <div class="mobile-icons">
-        <span class="icon">🔍</span>
-        <span class="icon">🛍️</span>
-      </div>
+    <div class="right-menu">
+      <nav class="menu">
+        <a href="#">HOME</a>
+        <a href="#">PRODUCTS</a>
+        <a href="#">ABOUT</a>
+        <a href="#">CONTACT</a>
+        <a href="#">LOGIN</a>
+      </nav>
     </div>
-    <div class="mobile-menu" id="mobileMenu">
-      <a href="#">HOME</a>
-      <hr class="white-line" />
-      <a href="#">SEARCH</a>
-      <hr class="grey-line" />
-      <a href="#">PRODUCTS</a>
-      <a href="#">ABOUT</a>
-      <a href="#">CONTACT</a>
-      <a href="#">LOGIN</a>
+    <div class="bottom-icons">
+      <span class="icon">🔍</span>
+      <span class="icon">🛍️</span>
     </div>
   </header>
+
+  <header class="mobile-header">
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <span></span><span></span><span></span>
+    </div>
+    <div class="mobile-logo">ZENVORA</div>
+    <div class="mobile-icons">
+      <span>🔍</span>
+      <span>🛍️</span>
+    </div>
+  </header>
+
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#">HOME</a>
+    <a href="#">SEARCH</a>
+    <a href="#">PRODUCTS</a>
+    <a href="#">ABOUT</a>
+    <a href="#">CONTACT</a>
+    <a href="#">LOGIN</a>
+  </div>
+
+  <script>
+    function toggleMenu(x) {
+      x.classList.toggle("active");
+      const nav = document.getElementById("mobileNav");
+      nav.classList.toggle("show");
+    }
+  </script>
+
 </body>
 </html>
