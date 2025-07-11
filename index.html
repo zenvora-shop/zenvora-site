@@ -2,38 +2,174 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zenvora | All-in-One Digital World</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zenvora | Digital Universe</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a2d9f2c0e0.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      background-color: #111;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: relative;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: #FFD700;
+    }
+
+    nav {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a:hover::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #FFD700;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .icon {
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+
+    /* Hamburger Base */
+    .hamburger {
+      width: 25px;
+      height: 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .bar {
+      height: 2px;
+      background-color: white;
+      transition: 0.4s;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: #1a1a1a;
+      position: absolute;
+      top: 60px;
+      right: 1rem;
+      width: 200px;
+      padding: 1rem;
+      z-index: 1000;
+    }
+
+    .mobile-nav a {
+      color: white;
+      text-decoration: none;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid #444;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .icons .icon.search-icon {
+        display: none;
+      }
+
+      .hamburger,
+      .cart-icon {
+        display: block;
+      }
+
+      .mobile-nav.show {
+        display: flex;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .hamburger {
+        display: none;
+      }
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="logo">ZENVORA</div>
 
-    <div class="desktop-nav">
+    <!-- Desktop Navigation -->
+    <nav>
       <a href="#">Home</a>
+      <a href="#">🔎</a>
       <a href="#">Products</a>
       <a href="#">About</a>
       <a href="#">Contact</a>
       <a href="#">Login</a>
-      <div class="search-cart">
-        <input type="text" placeholder="Search..." />
-        <i class="fas fa-shopping-cart cart-icon"></i>
+      <a class="icon cart-icon" href="#">🛒</a>
+    </nav>
+
+    <!-- Mobile Icons -->
+    <div class="icons">
+      <div class="hamburger" onclick="toggleMenu(this)">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
       </div>
+      <span class="icon cart-icon">🛒</span>
     </div>
 
-    <div class="hamburger" onclick="toggleMenu(this)">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
-    </div>
-
+    <!-- Mobile Menu -->
     <div class="mobile-nav" id="mobileNav">
       <a href="#">Home</a>
-      <a href="#">Search</a>
+      <a href="#">🔎 Search</a>
       <a href="#">Products</a>
       <a href="#">About</a>
       <a href="#">Contact</a>
@@ -41,22 +177,10 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <h1>All-in-One Digital Experience</h1>
-      <p>Curated products, tools, and services — discover more with Zenvora.</p>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Zenvora. All rights reserved.</p>
-  </footer>
-
   <script>
-    function toggleMenu(x) {
-      x.classList.toggle("active");
-      const nav = document.getElementById("mobileNav");
-      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+    function toggleMenu(icon) {
+      icon.classList.toggle('active');
+      document.getElementById('mobileNav').classList.toggle('show');
     }
   </script>
 </body>
