@@ -1,44 +1,152 @@
-/* CSS (styles.css) */ body { margin: 0; font-family: 'Poppins', sans-serif; background-color: #fff; color: #000; }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #ffffff;
+}
 
-.header { width: 100%; background-color: #fff; border-bottom: 1px solid #ddd; }
+header {
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+}
 
-/* MOBILE NAV */ .mobile-nav { display: flex; justify-content: space-between; align-items: center; padding: 10px 15px; }
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: black;
+  font-family: 'Poppins', sans-serif;
+}
 
-.logo { font-size: 20px; font-weight: 600; letter-spacing: 1px; }
+/* Mobile Header */
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+}
 
-.hamburger { width: 20px; cursor: pointer; }
+.hamburger {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
 
-.hamburger span { display: block; height: 2px; background-color: #000; margin: 4px 0; transition: 0.3s; }
+.bar {
+  width: 100%;
+  height: 2px;
+  background: black;
+  transition: 0.4s;
+}
 
-.icons .icon { margin-left: 12px; font-size: 18px; }
+.hamburger.active .bar:nth-child(1) {
+  transform: rotate(-45deg) translate(-3px, 4px);
+}
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .bar:nth-child(3) {
+  transform: rotate(45deg) translate(-3px, -4px);
+}
 
-/* DESKTOP NAV */ .desktop-nav { display: none; flex-direction: column; padding: 10px 30px; }
+.mobile-icons .icon {
+  margin-left: 16px;
+  font-size: 18px;
+}
 
-.nav-left { display: flex; align-items: center; justify-content: flex-start; }
+/* Mobile Menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: #1f1f1f;
+  padding: 16px;
+}
 
-.nav-left nav ul { list-style: none; display: flex; gap: 20px; margin-left: 30px; padding: 0; font-size: 14px; font-weight: 600; letter-spacing: 0.5px; }
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 0;
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+}
 
-.nav-left nav ul li:hover { border-bottom: 1px solid gold; }
+.separator.white {
+  height: 1px;
+  background: white;
+  margin: 4px 0;
+}
+.separator.grey {
+  height: 1px;
+  background: grey;
+  margin: 4px 0;
+}
 
-.nav-bottom { padding-left: 90px; margin-top: 5px; }
+.bottom-links {
+  margin-top: 16px;
+  color: white;
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+}
 
-.icon-block { display: inline-block; margin-right: 20px; text-align: center; }
+/* Desktop Header */
+.desktop-header {
+  display: none;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 8px 24px;
+  flex-direction: column;
+}
 
-.icon-block span { display: block; font-size: 10px; }
+.left-nav {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
+}
 
-/* MOBILE MENU */ .mobile-menu { display: none; background-color: #1a1a1a; color: #fff; padding: 15px; }
+nav {
+  display: flex;
+  gap: 16px;
+}
 
-.mobile-menu.open { display: block; }
+nav a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  position: relative;
+}
 
-.mobile-menu ul { list-style: none; padding: 0; }
+nav a:hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 2px;
+  width: 100%;
+  background: gold;
+}
 
-.mobile-menu li { padding: 12px 0; text-transform: uppercase; font-weight: 600; font-size: 14px; }
+.desktop-icons {
+  display: flex;
+  gap: 12px;
+  font-size: 18px;
+  padding-bottom: 10px;
+  width: 100%;
+  justify-content: flex-start;
+}
 
-hr { border: none; height: 1px; background-color: #fff; margin: 0; }
+/* Responsive */
+@media(min-width: 768px) {
+  .mobile-header, .mobile-menu {
+    display: none;
+  }
 
-hr.light { background-color: #555; }
-
-@media (min-width: 768px) { .mobile-nav, .mobile-menu { display: none; }
-
-.desktop-nav { display: flex; } }
-
+  .desktop-header {
+    display: flex;
+  }
+}
