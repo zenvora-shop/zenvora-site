@@ -3,186 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zenvora | Digital Universe</title>
-  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #f5f5f5;
-    }
-
-    header {
-      background-color: #111;
-      color: white;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
-      position: relative;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #FFD700;
-    }
-
-    .right-section {
-      display: flex;
-      align-items: center;
-      gap: 1.5rem;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 1.3rem;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: 500;
-      position: relative;
-    }
-
-    nav a:hover::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 100%;
-      height: 2px;
-      background: #FFD700;
-    }
-
-    .icon {
-      font-size: 1.2rem;
-      color: white;
-      cursor: pointer;
-    }
-
-    .hamburger {
-      width: 20px;
-      height: 18px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      cursor: pointer;
-      z-index: 1001;
-    }
-
-    .bar {
-      height: 2px;
-      background-color: white;
-      transition: 0.4s;
-    }
-
-    .hamburger.active .bar:nth-child(1) {
-      transform: rotate(45deg) translate(4px, 4px);
-    }
-
-    .hamburger.active .bar:nth-child(2) {
-      opacity: 0;
-    }
-
-    .hamburger.active .bar:nth-child(3) {
-      transform: rotate(-45deg) translate(4px, -4px);
-    }
-
-    .mobile-nav {
-      display: none;
-      flex-direction: column;
-      align-items: flex-start;
-      background: #1a1a1a;
-      position: absolute;
-      top: 60px;
-      right: 1rem;
-      width: 220px;
-      padding: 1rem;
-      z-index: 1000;
-    }
-
-    .mobile-nav a {
-      color: white;
-      text-decoration: none;
-      padding: 0.7rem 0;
-      border-bottom: 1px solid #444;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        display: none;
-      }
-
-      .mobile-nav.show {
-        display: flex;
-      }
-
-      .hamburger {
-        display: flex;
-      }
-
-      .cart-desktop {
-        display: none;
-      }
-    }
-
-    @media (min-width: 769px) {
-      .hamburger {
-        display: none;
-      }
-    }
-  </style>
+  <title>Zenvora | All-in-One Store</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/4d3a7edc27.js" crossorigin="anonymous"></script>
 </head>
 <body>
   <header>
-    <div class="logo">ZENVORA</div>
-
-    <div class="right-section">
-      <!-- Desktop Nav (aligned right) -->
-      <nav>
-        <a href="#">Home</a>
-        <a href="#">🔎 Search</a>
-        <a href="#">Products</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#">Login</a>
-        <a href="#" class="icon cart-desktop">🛍️</a>
-      </nav>
-
-      <!-- Hamburger + Mobile Cart -->
-      <span class="icon cart-mobile">🛍️</span>
+    <div class="left-header">
+      <img src="zenvora_logo.png" alt="Zenvora Logo" class="logo" />
+    </div>
+    <nav class="desktop-nav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="#">Login</a>
+    </nav>
+    <div class="right-header">
+      <a href="#"><i class="fas fa-search"></i></a>
+      <a href="#"><i class="fas fa-shopping-cart"></i></a>
       <div class="hamburger" onclick="toggleMenu(this)">
         <div class="bar"></div>
         <div class="bar"></div>
         <div class="bar"></div>
       </div>
     </div>
-
-    <!-- Mobile Nav -->
     <div class="mobile-nav" id="mobileNav">
-      <a href="#">Home</a>
-      <a href="#">🔎 Search</a>
-      <a href="#">Products</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-      <a href="#">Login</a>
+      <a href="#">HOME</a>
+      <a href="#">SEARCH</a>
+      <a href="#">PRODUCTS</a>
+      <a href="#">ABOUT</a>
+      <a href="#">CONTACT</a>
+      <a href="#">LOGIN</a>
     </div>
   </header>
 
+  <main>
+    <section class="hero">
+      <h2>Powering Your Lifestyle with Digital Everything</h2>
+      <p>Explore tools, trends & ideas tailored to your digital world.</p>
+      <a href="products.html" class="btn">Shop Now</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Zenvora. All rights reserved.</p>
+  </footer>
+
   <script>
-    function toggleMenu(icon) {
-      icon.classList.toggle('active');
-      document.getElementById('mobileNav').classList.toggle('show');
+    function toggleMenu(x) {
+      x.classList.toggle("active");
+      const nav = document.getElementById("mobileNav");
+      nav.classList.toggle("show");
     }
   </script>
 </body>
