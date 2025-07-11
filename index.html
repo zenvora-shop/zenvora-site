@@ -28,15 +28,21 @@
     }
 
     .logo {
-      font-size: 1.4rem;
+      font-size: 1.5rem;
       font-weight: 700;
       color: #FFD700;
+    }
+
+    .right-section {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
     }
 
     nav {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1.3rem;
     }
 
     nav a {
@@ -54,12 +60,6 @@
       width: 100%;
       height: 2px;
       background: #FFD700;
-    }
-
-    .icons {
-      display: flex;
-      align-items: center;
-      gap: 1.2rem;
     }
 
     .icon {
@@ -127,18 +127,17 @@
         display: flex;
       }
 
-      .icons .cart-left {
-        display: block;
+      .hamburger {
+        display: flex;
       }
 
-      .icons .cart-desktop {
+      .cart-desktop {
         display: none;
       }
     }
 
     @media (min-width: 769px) {
-      .hamburger,
-      .cart-left {
+      .hamburger {
         display: none;
       }
     }
@@ -148,20 +147,20 @@
   <header>
     <div class="logo">ZENVORA</div>
 
-    <!-- Desktop Nav -->
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">🔎 Search</a>
-      <a href="#">Products</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
-      <a href="#">Login</a>
-      <a href="#" class="icon cart-desktop">🛍️</a>
-    </nav>
+    <div class="right-section">
+      <!-- Desktop Nav (aligned right) -->
+      <nav>
+        <a href="#">Home</a>
+        <a href="#">🔎 Search</a>
+        <a href="#">Products</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Login</a>
+        <a href="#" class="icon cart-desktop">🛍️</a>
+      </nav>
 
-    <!-- Mobile Icons -->
-    <div class="icons">
-      <span class="icon cart-left">🛍️</span>
+      <!-- Hamburger + Mobile Cart -->
+      <span class="icon cart-mobile">🛍️</span>
       <div class="hamburger" onclick="toggleMenu(this)">
         <div class="bar"></div>
         <div class="bar"></div>
