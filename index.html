@@ -2,60 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Zenvora | All-in-One Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZENVORA | All-in-One Store</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/4d3a7edc27.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <header>
-    <div class="left-header">
-      <img src="zenvora_logo.png" alt="Zenvora Logo" class="logo" />
+  <header class="zen-header">
+    <div class="hamburger" onclick="toggleMenu(this)">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </div>
-    <nav class="desktop-nav">
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="#">Login</a>
-    </nav>
-    <div class="right-header">
-      <a href="#"><i class="fas fa-search"></i></a>
-      <a href="#"><i class="fas fa-shopping-cart"></i></a>
-      <div class="hamburger" onclick="toggleMenu(this)">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-      </div>
+
+    <div class="logo">ZENVORA</div>
+
+    <div class="header-icons">
+      <span class="icon">🔍</span>
+      <span class="icon">🛍️</span> <!-- Cart Icon -->
     </div>
-    <div class="mobile-nav" id="mobileNav">
-      <a href="#">HOME</a>
+
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="index.html">HOME</a>
+      <hr />
       <a href="#">SEARCH</a>
-      <a href="#">PRODUCTS</a>
-      <a href="#">ABOUT</a>
-      <a href="#">CONTACT</a>
-      <a href="#">LOGIN</a>
-    </div>
+      <hr />
+      <a href="products.html">PRODUCTS</a>
+      <hr />
+      <a href="about.html">ABOUT</a>
+      <hr />
+      <a href="contact.html">CONTACT</a>
+      <hr />
+      <a href="login.html">LOGIN</a>
+    </nav>
+
+    <nav class="desktop-nav">
+      <a href="index.html">HOME</a>
+      <a href="#">SEARCH</a>
+      <a href="products.html">PRODUCTS</a>
+      <a href="about.html">ABOUT</a>
+      <a href="contact.html">CONTACT</a>
+      <a href="login.html">LOGIN</a>
+    </nav>
   </header>
 
-  <main>
-    <section class="hero">
-      <h2>Powering Your Lifestyle with Digital Everything</h2>
-      <p>Explore tools, trends & ideas tailored to your digital world.</p>
-      <a href="products.html" class="btn">Shop Now</a>
-    </section>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Zenvora. All rights reserved.</p>
-  </footer>
-
   <script>
-    function toggleMenu(x) {
-      x.classList.toggle("active");
+    function toggleMenu(icon) {
+      icon.classList.toggle("active");
       const nav = document.getElementById("mobileNav");
-      nav.classList.toggle("show");
+      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
     }
   </script>
 </body>
