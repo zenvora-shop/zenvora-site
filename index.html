@@ -1,74 +1,68 @@
-<!-- HTML --><!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zenvora</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zenvora | All-in-One Store</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="header">
-    <!-- MOBILE NAV -->
-    <div class="mobile-nav">
-      <div class="hamburger" id="hamburger">
-        <span></span><span></span><span></span>
+  <header>
+    <div class="mobile-header">
+      <div class="hamburger" onclick="toggleMenu(this)">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
       </div>
       <div class="logo">ZENVORA</div>
-      <div class="icons">
-        <i class="icon search">🔍</i>
-        <i class="icon cart">🛍️</i>
-      </div>
-    </div><!-- DESKTOP NAV -->
-<div class="desktop-nav">
-  <div class="nav-left">
-    <div class="logo">ZENVORA</div>
-    <nav>
-      <ul>
-        <li>HOME</li>
-        <li>PRODUCTS</li>
-        <li>ABOUT</li>
-        <li>CONTACT</li>
-        <li>LOGIN</li>
-      </ul>
-    </nav>
-  </div>
-  <div class="nav-bottom">
-    <div class="bottom-icons">
-      <div class="icon-block">
-        <i class="icon">🔍</i>
-        <span>SHOP</span>
-      </div>
-      <div class="icon-block">
-        <i class="icon">🛍️</i>
-        <span>CART</span>
+      <div class="mobile-icons">
+        <span class="icon">🔍</span>
+        <span class="icon">🛍️</span>
       </div>
     </div>
-  </div>
-</div>
 
-<!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu">
-  <ul>
-    <li>HOME</li>
-    <hr>
-    <li>SEARCH</li>
-    <hr class="light">
-    <li>PRODUCTS</li>
-    <hr>
-    <li>ABOUT</li>
-    <hr>
-    <li>CONTACT</li>
-    <hr>
-    <li>LOGIN</li>
-  </ul>
-</div>
+    <div class="desktop-header">
+      <div class="left-nav">
+        <div class="logo">ZENVORA</div>
+        <nav>
+          <a href="#">HOME</a>
+          <a href="#">PRODUCTS</a>
+          <a href="#">ABOUT</a>
+          <a href="#">CONTACT</a>
+          <a href="#">LOGIN</a>
+        </nav>
+      </div>
+      <div class="desktop-icons">
+        <span class="icon">🔍</span>
+        <span class="icon">🛍️</span>
+      </div>
+    </div>
 
-  </header>  <script>
-    const hamburger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobileMenu');
-    hamburger.onclick = () => {
-      hamburger.classList.toggle('active');
-      mobileMenu.classList.toggle('open');
-    };
-  </script></body>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#">HOME</a>
+      <div class="separator white"></div>
+      <a href="#">SEARCH</a>
+      <div class="separator grey"></div>
+      <a href="#">PRODUCTS</a>
+      <div class="separator white"></div>
+      <a href="#">ABOUT</a>
+      <div class="separator white"></div>
+      <a href="#">CONTACT</a>
+      <div class="separator white"></div>
+      <a href="#">LOGIN</a>
+      <div class="bottom-links">
+        <span>🔍 SHOP</span>
+        <span>🛍️ CART</span>
+      </div>
+    </div>
+  </header>
+
+  <script>
+    function toggleMenu(x) {
+      x.classList.toggle("active");
+      const menu = document.getElementById("mobileMenu");
+      menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
+</body>
 </html>
