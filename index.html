@@ -1,62 +1,145 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZENVORA</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Playfair+Display+SC&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zenvora</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #fff;
+    }
+    header {
+      width: 100%;
+      background-color: #fff;
+      padding: 10px 20px;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #000;
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    nav a {
+      color: #000;
+      text-decoration: none;
+      font-size: 14px;
+      position: relative;
+    }
+    nav a:hover::after {
+      content: "";
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: gold;
+    }
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .icons i {
+      font-size: 18px;
+      color: #000;
+      cursor: pointer;
+    }
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+    .hamburger span {
+      height: 2px;
+      width: 20px;
+      background: #000;
+      transition: all 0.3s ease;
+    }
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: #111;
+      color: white;
+      flex-direction: column;
+      padding: 20px;
+    }
+    .mobile-menu a {
+      color: white;
+      padding: 10px 0;
+      border-bottom: 1px solid #555;
+      text-transform: uppercase;
+    }@media (max-width: 768px) {
+  header {
+    justify-content: space-between;
+  }
+  nav {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+  .logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .icons {
+    margin-left: auto;
+  }
+}
+
+  </style>
 </head>
 <body>
   <header>
-    <div class="left-icons">
-      <div class="hamburger" onclick="toggleMenu(this)">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
-      </div>
+    <div class="hamburger" onclick="toggleMobileMenu(this)">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-
     <div class="logo">ZENVORA</div>
-
-    <div class="right-icons">
-      <a href="#"><span class="icon">🔍</span></a>
-      <a href="#"><span class="icon">🛒</span></a>
-    </div>
-
-    <div class="mobile-nav" id="mobileNav">
+    <nav>
       <a href="#">HOME</a>
-      <div class="separator"></div>
-      <a href="#">SEARCH</a>
-      <div class="separator"></div>
       <a href="#">PRODUCTS</a>
-      <div class="separator"></div>
       <a href="#">ABOUT</a>
-      <div class="separator"></div>
       <a href="#">CONTACT</a>
-      <div class="separator"></div>
       <a href="#">LOGIN</a>
+    </nav>
+    <div class="icons">
+      <i class="search-icon">🔍</i>
+      <i class="cart-icon">🛍️</i>
     </div>
-  </header>
-
-  <nav class="desktop-nav">
+  </header>  <div class="mobile-menu" id="mobileMenu">
     <a href="#">HOME</a>
+    <a href="#">SEARCH</a>
     <a href="#">PRODUCTS</a>
     <a href="#">ABOUT</a>
     <a href="#">CONTACT</a>
     <a href="#">LOGIN</a>
-    <span class="right-nav">
-      <a href="#">🔍</a>
-      <a href="#">🛒</a>
-    </span>
-  </nav>
-
-  <script>
-    function toggleMenu(x) {
-      x.classList.toggle("active");
-      const nav = document.getElementById("mobileNav");
-      nav.classList.toggle("open");
+  </div>  <script>
+    function toggleMobileMenu(menu) {
+      menu.classList.toggle("open");
+      const mobileMenu = document.getElementById("mobileMenu");
+      mobileMenu.style.display = mobileMenu.style.display === "flex" ? "none" : "flex";
     }
-  </script>
-</body>
+  </script></body>
 </html>
