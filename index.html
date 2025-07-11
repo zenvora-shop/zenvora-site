@@ -3,60 +3,68 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zenvora | All-in-One Store</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Zenvora | All-in-One Digital Marketplace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-
     body {
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #fff;
-      color: #111;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      color: #ffffff;
     }
-
     header {
-      background: #000;
+      background: #000000;
       color: white;
-      padding: 0.7rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      padding: 1rem 2rem;
       position: relative;
+      z-index: 10;
     }
-
     .logo {
-      font-size: 1.4rem;
-      font-weight: bold;
-      color: white;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: #ffffff;
     }
-
     nav {
       display: flex;
-      gap: 1rem;
+      gap: 2rem;
+      align-items: center;
     }
-
     nav a {
       color: white;
       text-decoration: none;
-      font-size: 1rem;
+      font-weight: 500;
       position: relative;
     }
-
-    nav a::after {
-      content: '';
-      display: block;
-      width: 0;
-      height: 2px;
-      background: white;
-      transition: width 0.3s;
-    }
-
     nav a:hover::after {
+      content: '';
+      position: absolute;
       width: 100%;
+      height: 2px;
+      background-color: gold;
+      bottom: -4px;
+      left: 0;
+    }
+    .header-right {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+    .search-bar input {
+      padding: 0.4rem 0.8rem;
+      border: none;
+      border-radius: 3px;
+    }
+    .icon-links a {
+      color: #ddd;
+      text-decoration: none;
+      font-size: 1rem;
     }
 
     .hamburger {
@@ -64,58 +72,102 @@
       flex-direction: column;
       cursor: pointer;
     }
-
     .bar {
       height: 3px;
       width: 25px;
       background: white;
-      margin: 3px 0;
-      transition: all 0.4s ease;
+      margin: 4px 0;
+      transition: 0.4s;
     }
 
     .mobile-nav {
       display: none;
       flex-direction: column;
-      background: #000;
+      background: #111;
       position: absolute;
-      top: 60px;
+      top: 65px;
       right: 2rem;
-      width: 180px;
+      width: 220px;
       padding: 1rem;
-      border: 1px solid #444;
-      z-index: 100;
+      border: 1px solid #333;
     }
-
     .mobile-nav a {
       color: white;
       text-decoration: none;
-      margin: 0.5rem 0;
-      font-size: 0.95rem;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid #444;
     }
 
     .hamburger.active .bar:nth-child(1) {
       transform: rotate(-45deg) translate(-5px, 6px);
     }
-
     .hamburger.active .bar:nth-child(2) {
       opacity: 0;
     }
-
     .hamburger.active .bar:nth-child(3) {
       transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .hero {
+      background: url('banner.jpg') center/cover no-repeat;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 4rem 2rem;
+      color: white;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+    .hero h2, .hero p {
+      position: relative;
+      z-index: 1;
+    }
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 1.5rem;
+    }
+    .btn {
+      padding: 0.8rem 1.5rem;
+      background: gold;
+      color: black;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      border-radius: 5px;
+      position: relative;
+      z-index: 1;
+    }
+
+    footer {
+      background: #000;
+      color: #999;
+      text-align: center;
+      padding: 1rem 0;
     }
 
     @media (max-width: 768px) {
       nav {
         display: none;
       }
-
       .hamburger {
         display: flex;
       }
-
       .mobile-nav {
-        display: flex;
+        display: none;
       }
     }
   </style>
@@ -123,17 +175,29 @@
 <body>
   <header>
     <div class="logo">ZENVORA</div>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <div class="hamburger" onclick="toggleMenu(this)">
-      <div class="bar"></div>
-      <div class="bar"></div>
-      <div class="bar"></div>
+
+    <div class="header-right">
+      <div class="search-bar">
+        <input type="text" placeholder="Search..." />
+      </div>
+      <div class="icon-links">
+        <a href="#">Login</a> |
+        <a href="#">Cart</a>
+      </div>
+      <div class="hamburger" onclick="toggleMenu(this)">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+      </div>
     </div>
+
     <div class="mobile-nav" id="mobileNav">
       <a href="index.html">Home</a>
       <a href="products.html">Products</a>
@@ -142,13 +206,16 @@
     </div>
   </header>
 
-  <main style="padding: 3rem 2rem;">
-    <h2 style="font-size: 2rem;">Welcome to Zenvora</h2>
-    <p style="margin-top: 1rem; font-size: 1rem;">Your all-in-one destination for digital products, services, and everything in between.</p>
+  <main>
+    <section class="hero">
+      <h2>Explore Smarter. Shop Better. Live Seamlessly.</h2>
+      <p>Your curated gateway to everything digital — tools, trends, and tech.</p>
+      <a href="products.html" class="btn">Start Exploring</a>
+    </section>
   </main>
 
-  <footer style="text-align:center; padding: 1rem; background:#000; color:white;">
-    &copy; 2025 Zenvora. All rights reserved.
+  <footer>
+    <p>&copy; 2025 Zenvora. All rights reserved.</p>
   </footer>
 
   <script>
