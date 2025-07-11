@@ -3,53 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZENVORA | All-in-One Store</title>
+  <title>ZENVORA</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Playfair+Display+SC&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="zen-header">
-    <div class="hamburger" onclick="toggleMenu(this)">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+  <header>
+    <div class="left-icons">
+      <div class="hamburger" onclick="toggleMenu(this)">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
     </div>
 
     <div class="logo">ZENVORA</div>
 
-    <div class="header-icons">
-      <span class="icon">🔍</span>
-      <span class="icon">🛍️</span> <!-- Cart Icon -->
+    <div class="right-icons">
+      <a href="#"><span class="icon">🔍</span></a>
+      <a href="#"><span class="icon">🛒</span></a>
     </div>
 
-    <nav class="mobile-nav" id="mobileNav">
-      <a href="index.html">HOME</a>
-      <hr />
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#">HOME</a>
+      <div class="separator"></div>
       <a href="#">SEARCH</a>
-      <hr />
-      <a href="products.html">PRODUCTS</a>
-      <hr />
-      <a href="about.html">ABOUT</a>
-      <hr />
-      <a href="contact.html">CONTACT</a>
-      <hr />
-      <a href="login.html">LOGIN</a>
-    </nav>
-
-    <nav class="desktop-nav">
-      <a href="index.html">HOME</a>
-      <a href="#">SEARCH</a>
-      <a href="products.html">PRODUCTS</a>
-      <a href="about.html">ABOUT</a>
-      <a href="contact.html">CONTACT</a>
-      <a href="login.html">LOGIN</a>
-    </nav>
+      <div class="separator"></div>
+      <a href="#">PRODUCTS</a>
+      <div class="separator"></div>
+      <a href="#">ABOUT</a>
+      <div class="separator"></div>
+      <a href="#">CONTACT</a>
+      <div class="separator"></div>
+      <a href="#">LOGIN</a>
+    </div>
   </header>
 
+  <nav class="desktop-nav">
+    <a href="#">HOME</a>
+    <a href="#">PRODUCTS</a>
+    <a href="#">ABOUT</a>
+    <a href="#">CONTACT</a>
+    <a href="#">LOGIN</a>
+    <span class="right-nav">
+      <a href="#">🔍</a>
+      <a href="#">🛒</a>
+    </span>
+  </nav>
+
   <script>
-    function toggleMenu(icon) {
-      icon.classList.toggle("active");
+    function toggleMenu(x) {
+      x.classList.toggle("active");
       const nav = document.getElementById("mobileNav");
-      nav.style.display = nav.style.display === "flex" ? "none" : "flex";
+      nav.classList.toggle("open");
     }
   </script>
 </body>
