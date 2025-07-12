@@ -1,60 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- index.html --><!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ZENVORA | All-In-One Store</title>
-  <link rel="stylesheet" href="style.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zenvora | All-in-One Store</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header class="desktop-header">
-    <div class="left">
-      <div class="logo">ZENVORA</div>
-    </div>
-    <div class="right-menu">
-      <nav class="menu">
-        <a href="#">HOME</a>
-        <a href="#">PRODUCTS</a>
-        <a href="#">ABOUT</a>
-        <a href="#">CONTACT</a>
-        <a href="#">LOGIN</a>
-      </nav>
-    </div>
-    <div class="bottom-icons">
-      <span class="icon">🔍</span>
-      <span class="icon">🛍️</span>
-    </div>
-  </header>
-
-  <header class="mobile-header">
-    <div class="hamburger" onclick="toggleMenu(this)">
-      <span></span><span></span><span></span>
-    </div>
-    <div class="mobile-logo">ZENVORA</div>
-    <div class="mobile-icons">
-      <span>🔍</span>
-      <span>🛍️</span>
-    </div>
-  </header>
-
-  <div class="mobile-nav" id="mobileNav">
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">ZENVORA</div><nav class="desktop-nav">
     <a href="#">HOME</a>
-    <a href="#">SEARCH</a>
     <a href="#">PRODUCTS</a>
     <a href="#">ABOUT</a>
     <a href="#">CONTACT</a>
     <a href="#">LOGIN</a>
+  </nav>
+
+  <div class="header-icons">
+    <span class="icon search-icon">🔍</span>
+    <span class="icon cart-icon">🛒</span>
   </div>
 
-  <script>
-    function toggleMenu(x) {
-      x.classList.toggle("active");
-      const nav = document.getElementById("mobileNav");
-      nav.classList.toggle("show");
-    }
-  </script>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
 
-</body>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#">HOME</a>
+  <hr>
+  <a href="#">SEARCH</a>
+  <hr>
+  <a href="#">PRODUCTS</a>
+  <hr>
+  <a href="#">ABOUT</a>
+  <hr>
+  <a href="#">CONTACT</a>
+  <hr>
+  <a href="#">LOGIN</a>
+</div>
+
+  </header>  <script>
+    function toggleMenu() {
+      const menu = document.getElementById("mobileMenu");
+      const icon = document.getElementById("hamburger");
+      icon.classList.toggle("active");
+      menu.classList.toggle("open");
+    }
+  </script></body>
 </html>
