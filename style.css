@@ -1,147 +1,151 @@
-body {
+/* Reset and Base Styles */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Poppins', sans-serif;
-  background-color: white;
+  background-color: #fff;
+  color: #000;
 }
 
-a {
-  text-decoration: none;
-  color: white;
-}
-
-.desktop-header {
-  display: none;
-}
-
-.mobile-header {
+/* Header Layout */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: white;
-  padding: 10px 20px;
-  border-bottom: 1px solid #ccc;
+  position: relative;
 }
 
-.mobile-logo {
-  font-size: 1.4rem;
-  font-weight: bold;
-  font-family: 'Poppins', sans-serif;
-  color: black;
-  text-align: center;
-}
-
-.mobile-icons span {
+/* Logo */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #000;
   margin-left: 10px;
-  font-size: 1.2rem;
 }
 
-.hamburger {
-  width: 20px;
-  cursor: pointer;
+/* Nav for Desktop */
+nav.desktop-menu {
   display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+nav.desktop-menu a {
+  text-decoration: none;
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 500;
+  position: relative;
+}
+
+nav.desktop-menu a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: gold;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease-in-out;
+}
+
+nav.desktop-menu a:hover::after {
+  transform: scaleX(1);
+}
+
+/* Search + Cart (Desktop) */
+.extra-options {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+.extra-options i {
+  font-size: 1.2rem;
+  color: #000;
+  cursor: pointer;
+}
+
+/* Hamburger (Mobile) */
+.hamburger {
+  display: none;
   flex-direction: column;
-  justify-content: space-between;
-  height: 16px;
+  cursor: pointer;
+  gap: 4px;
 }
 
 .hamburger span {
-  background-color: black;
+  width: 20px;
   height: 2px;
-  width: 100%;
+  background-color: black;
   transition: all 0.3s ease;
 }
 
-/* Hamburger animation */
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(4px, 4px);
 }
+
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.active span:nth-child(3) {
   transform: rotate(-45deg) translate(4px, -4px);
 }
 
-.mobile-nav {
+/* Mobile Nav */
+.mobile-menu {
   display: none;
   flex-direction: column;
-  background-color: #1f1f1f;
-  padding: 20px;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background-color: #f2f2f2;
+  border-top: 1px solid #ccc;
+  z-index: 99;
+  padding: 1rem 0;
 }
 
-.mobile-nav.show {
-  display: flex;
-}
-
-.mobile-nav a {
-  padding: 10px 0;
-  border-bottom: 1px solid #444;
-  color: white;
-  font-weight: 600;
+.mobile-menu a {
+  padding: 1rem 2rem;
+  text-decoration: none;
   text-transform: uppercase;
+  font-weight: 600;
+  color: #000;
+  border-bottom: 1px solid #ccc;
 }
 
-.mobile-nav a:nth-child(2) {
-  border-bottom: 1px solid white;
-}
-
-/* Desktop layout */
-@media(min-width: 769px) {
-  .mobile-header, .mobile-nav {
+/* Responsive */
+@media (max-width: 768px) {
+  nav.desktop-menu {
     display: none;
   }
 
-  .desktop-header {
+  .hamburger {
     display: flex;
-    flex-direction: column;
-    background: white;
-    padding: 10px 20px;
   }
 
-  .desktop-header .left .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: black;
-    font-family: 'Poppins', sans-serif;
+  .extra-options {
+    gap: 1rem;
   }
 
-  .right-menu {
+  .mobile-menu.active {
     display: flex;
-    justify-content: flex-end;
-    gap: 20px;
   }
 
-  .menu {
-    display: flex;
-    gap: 25px;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
-
-  .menu a {
-    position: relative;
-    color: black;
-  }
-
-  .menu a:hover::after {
-    content: "";
+  .logo {
     position: absolute;
-    width: 100%;
-    height: 2px;
-    bottom: -4px;
-    left: 0;
-    background-color: gold;
-  }
-
-  .bottom-icons {
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 10px;
-    gap: 20px;
-  }
-
-  .bottom-icons .icon {
-    font-size: 1.2rem;
-    color: black;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
