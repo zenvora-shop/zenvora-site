@@ -1,19 +1,33 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Poppins', sans-serif;
-  background: white;
+  background-color: white;
   color: black;
 }
 
 /* Header */
 .header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   padding: 12px 16px;
   border-bottom: 1px solid #eee;
-  background: white;
   position: relative;
+  background: white;
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
 }
 
 /* Hamburger */
@@ -22,28 +36,20 @@ body {
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
+  z-index: 999;
 }
 
 .hamburger span {
   width: 22px;
   height: 2px;
   background: black;
-  transition: all 0.3s ease;
-}
-
-/* Logo */
-.logo {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 20px;
-  font-weight: 600;
+  transition: 0.3s ease;
 }
 
 /* Icons */
 .icons {
   display: flex;
-  gap: 15px;
+  gap: 14px;
   font-size: 18px;
 }
 
@@ -51,34 +57,24 @@ body {
 .mobile-menu {
   display: none;
   flex-direction: column;
-  background: #f5f5f5;
+  background-color: #f2f2f2;
+  width: 100%;
   position: absolute;
   top: 60px;
   left: 0;
-  width: 100%;
   z-index: 99;
+  border-top: 1px solid #ddd;
 }
 
 .mobile-menu ul {
   list-style: none;
-  margin: 0;
-  padding: 0;
 }
 
 .mobile-menu li {
-  padding: 12px 20px;
+  padding: 14px 20px;
   font-weight: 500;
   border-bottom: 1px solid #ccc;
   text-transform: uppercase;
-  font-size: 16px;
-}
-
-/* Responsive: Show hamburger menu only on mobile */
-@media (min-width: 768px) {
-  .mobile-menu,
-  .hamburger {
-    display: none;
-  }
-.mobile-menu.show {
-  display: flex;
+  font-size: 14px;
+  background: white;
 }
