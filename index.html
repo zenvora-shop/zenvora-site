@@ -1,53 +1,57 @@
-<!-- index.html --><!DOCTYPE html><html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zenvora | All-in-One Store</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zenvora | Raksha Bandhan Specials</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-container">
-      <div class="logo">ZENVORA</div><nav class="desktop-nav">
-    <a href="#">HOME</a>
-    <a href="#">PRODUCTS</a>
-    <a href="#">ABOUT</a>
-    <a href="#">CONTACT</a>
-    <a href="#">LOGIN</a>
-  </nav>
-
-  <div class="header-icons">
-    <span class="icon search-icon">🔍</span>
-    <span class="icon cart-icon">🛒</span>
-  </div>
-
-  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
-    <span></span>
-    <span></span>
-    <span></span>
-  </div>
-</div>
-
-<div class="mobile-menu" id="mobileMenu">
-  <a href="#">HOME</a>
-  <hr>
-  <a href="#">SEARCH</a>
-  <hr>
-  <a href="#">PRODUCTS</a>
-  <hr>
-  <a href="#">ABOUT</a>
-  <hr>
-  <a href="#">CONTACT</a>
-  <hr>
-  <a href="#">LOGIN</a>
-</div>
-
-  </header>  <script>
-    function toggleMenu() {
-      const menu = document.getElementById("mobileMenu");
-      const icon = document.getElementById("hamburger");
-      icon.classList.toggle("active");
-      menu.classList.toggle("open");
-    }
-  </script></body>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">ZENVORA</div>
+    <div class="menu-toggle" id="hamburger">
+      <span></span><span></span><span></span>
+    </div>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">HOME</a></li>
+        <li><a href="#">PRODUCTS</a></li>
+        <li><a href="#">ABOUT</a></li>
+        <li><a href="#">CONTACT</a></li>
+        <li><a href="#">LOGIN</a></li>
+      </ul>
+    </nav>
+    <div class="icons">
+      <i class="search-icon">🔍</i>
+      <i class="cart-icon">🛒</i>
+    </div>
+  </header>  <!-- Hero Banner -->  <section class="hero">
+    <div class="hero-text">
+      <h1>Celebrate Raksha Bandhan with Love</h1>
+      <p>Traditional & Custom Rakhis. Free Delivery Across India.</p>
+      <a href="#" class="cta">Shop Now</a>
+    </div>
+  </section>  <!-- Product Section (Preview) -->  <section class="products">
+    <h2>Featured Rakhis</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="rakhi1.jpg" alt="Rakhi 1" />
+        <p class="name">Thread of Love</p>
+        <p class="price">₹150</p>
+      </div>
+      <div class="product-card">
+        <img src="rakhi2.jpg" alt="Rakhi 2" />
+        <p class="name">Golden Bond</p>
+        <p class="price">₹180</p>
+      </div>
+      <div class="product-card">
+        <img src="rakhi3.jpg" alt="Rakhi 3" />
+        <p class="name">Pearl Protection</p>
+        <p class="price">₹200</p>
+      </div>
+    </div>
+  </section>  <!-- Footer -->  <footer>
+    <p>&copy; 2025 Zenvora. All rights reserved.</p>
+  </footer>  <script src="script.js"></script></body>
 </html>
