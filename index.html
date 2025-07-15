@@ -1,20 +1,19 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zenvora | Raksha Bandhan Specials</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600&family=Poppins&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <title>Zenvora | Raksha Bandhan</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <!-- Header -->
   <header class="header">
     <div class="logo">ZENVORA</div>
-    <div class="menu-toggle" id="hamburger">
-      <span></span><span></span><span></span>
-    </div>
+
     <nav class="nav">
-      <ul>
+      <ul class="nav-links">
         <li><a href="#">HOME</a></li>
         <li><a href="#">PRODUCTS</a></li>
         <li><a href="#">ABOUT</a></li>
@@ -22,36 +21,33 @@
         <li><a href="#">LOGIN</a></li>
       </ul>
     </nav>
+
     <div class="icons">
-      <i class="search-icon">🔍</i>
-      <i class="cart-icon">🛒</i>
+      <span class="icon search">🔍</span>
+      <span class="icon cart">🛒</span>
     </div>
-  </header>  <!-- Hero Banner -->  <section class="hero">
-    <div class="hero-text">
-      <h1>Celebrate Raksha Bandhan with Love</h1>
-      <p>Traditional & Custom Rakhis. Free Delivery Across India.</p>
-      <a href="#" class="cta">Shop Now</a>
+
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </section>  <!-- Product Section (Preview) -->  <section class="products">
-    <h2>Featured Rakhis</h2>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="rakhi1.jpg" alt="Rakhi 1" />
-        <p class="name">Thread of Love</p>
-        <p class="price">₹150</p>
-      </div>
-      <div class="product-card">
-        <img src="rakhi2.jpg" alt="Rakhi 2" />
-        <p class="name">Golden Bond</p>
-        <p class="price">₹180</p>
-      </div>
-      <div class="product-card">
-        <img src="rakhi3.jpg" alt="Rakhi 3" />
-        <p class="name">Pearl Protection</p>
-        <p class="price">₹200</p>
-      </div>
-    </div>
-  </section>  <!-- Footer -->  <footer>
-    <p>&copy; 2025 Zenvora. All rights reserved.</p>
-  </footer>  <script src="script.js"></script></body>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li>HOME</li>
+      <li>SEARCH</li>
+      <li>PRODUCTS</li>
+      <li>ABOUT</li>
+      <li>CONTACT</li>
+      <li>LOGIN</li>
+    </ul>
+  </div>
+
+  <section class="hero">
+    <h1>Celebrate Raksha Bandhan with Zenvora</h1>
+    <p>Rakhis that feel like home. Coming soon.</p>
+  </section>
+</body>
 </html>
