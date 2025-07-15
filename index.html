@@ -1,41 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zenvora</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet" />
-  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-
   <!-- Mobile Header -->
-  <header class="header">
+  <header class="mobile-header">
     <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+      <span></span><span></span><span></span>
     </div>
-
-    <div class="logo">ZENVORA</div>
-
-    <div class="icons">
-      <span class="icon">🔍</span>
-      <span class="icon">🛒</span>
+    <div class="mobile-logo">ZENVORA</div>
+    <div class="mobile-icons">
+      <div class="profile-dropdown">
+        <span class="icon profile">&#128100;</span>
+        <div class="dropdown-content">
+          <a href="#">Login</a>
+          <a href="#">Sign Up</a>
+        </div>
+      </div>
+      <span class="icon">&#128269;</span>
+      <span class="icon">&#128722;</span>
+    </div>
+  </header>  <nav class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li>Home</li>
+      <li>Product</li>
+      <li>Contact</li>
+      <li>About</li>
+      <li>Sign In</li>
+    </ul>
+  </nav>  <!-- Desktop Header based on Nicobar layout -->  <header class="desktop-header">
+    <div class="desktop-left">
+      <span class="desktop-logo">ZENVORA</span>
+    </div>
+    <nav class="desktop-menu">
+      <a href="#">Home</a>
+      <a href="#">Product</a>
+      <a href="#">Contact</a>
+      <a href="#">About</a>
+      <a href="#">Sign In</a>
+    </nav>
+    <div class="desktop-icons">
+      <span class="icon">&#128100;</span>
+      <span class="icon">&#128269;</span>
+      <span class="icon">&#128722;</span>
     </div>
   </header>
-
-  <!-- Mobile Menu -->
-  <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li>🏠 HOME</li>
-      <li>🛍️ PRODUCTS</li>
-      <li>📄 ABOUT</li>
-      <li>📞 CONTACT</li>
-      <li>🔐 LOGIN</li>
-    </ul>
-  </div>
-
 </body>
 </html>
