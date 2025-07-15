@@ -2,52 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zenvora | Raksha Bandhan</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Zenvora</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet" />
   <script src="script.js" defer></script>
 </head>
 <body>
   <header class="header">
-    <div class="logo">ZENVORA</div>
-
-    <nav class="nav">
-      <ul class="nav-links">
-        <li><a href="#">HOME</a></li>
-        <li><a href="#">PRODUCTS</a></li>
-        <li><a href="#">ABOUT</a></li>
-        <li><a href="#">CONTACT</a></li>
-        <li><a href="#">LOGIN</a></li>
-      </ul>
-    </nav>
-
-    <div class="icons">
-      <span class="icon search">🔍</span>
-      <span class="icon cart">🛒</span>
+    <div class="hamburger" id="hamburger">
+      <span></span><span></span><span></span>
     </div>
 
-    <div class="hamburger" id="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+    <div class="logo">ZENVORA</div>
+
+    <div class="icons">
+      <span class="icon search">🔎</span>
+      <span class="icon cart">🛍️</span>
     </div>
   </header>
 
+  <nav class="nav desktop-nav">
+    <ul class="nav-links">
+      <li><a href="#">HOME</a></li>
+      <li><a href="#">PRODUCTS</a></li>
+      <li><a href="#">ABOUT</a></li>
+      <li><a href="#">CONTACT</a></li>
+      <li><a href="#">LOGIN</a></li>
+    </ul>
+    <div class="bottom-icons">
+      <span>🔎</span>
+      <span>🛍️</span>
+    </div>
+  </nav>
+
   <div class="mobile-menu" id="mobileMenu">
     <ul>
-      <li>HOME</li>
-      <li>SEARCH</li>
-      <li>PRODUCTS</li>
-      <li>ABOUT</li>
-      <li>CONTACT</li>
-      <li>LOGIN</li>
+      <li>🏠 HOME</li>
+      <li>🔍 SEARCH</li>
+      <li🛒 PRODUCTS</li>
+      <li>📄 ABOUT</li>
+      <li>📞 CONTACT</li>
+      <li>🔐 LOGIN</li>
     </ul>
   </div>
 
   <section class="hero">
     <h1>Celebrate Raksha Bandhan with Zenvora</h1>
-    <p>Rakhis that feel like home. Coming soon.</p>
+    <p>Premium, custom Rakhis — launching soon.</p>
   </section>
 </body>
 </html>
